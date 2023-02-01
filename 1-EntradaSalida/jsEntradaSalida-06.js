@@ -1,4 +1,5 @@
 /*
+Agustin Conte
 Debemos lograr tomar Los numeros por ID ,
 transformarlos a enteros (parseInt) y Sumarlos.
 mostrar el resulto por medio de "ALERT"*/
@@ -13,7 +14,7 @@ function sumar()
 	numero2 = parseInt(document.getElementById("txtIdNumeroDos").value);
 	suma = numero1 + numero2
 
-	mensaje = suma
+	mensaje = "El resultado es "+  suma
 
 	alert(mensaje);
 }

@@ -14,7 +14,7 @@ function sumar()
 	numero2 = parseInt(document.getElementById("txtIdNumeroDos").value);
 	suma = numero1 + numero2
 
-	mensaje = suma
+	mensaje = "El resultado es "+  suma
 
 	alert(mensaje);	
 }
@@ -30,7 +30,7 @@ function restar()
 	numero2 = parseInt(document.getElementById("txtIdNumeroDos").value);
 	resta = numero1 - numero2
 
-	mensaje = resta
+	mensaje = "El resultado es "+ resta
 
 	alert(mensaje);
 }
@@ -46,7 +46,7 @@ function multiplicar()
 	numero2 = parseInt(document.getElementById("txtIdNumeroDos").value);
 	multiplicar = numero1 * numero2
 
-	mensaje = multiplicar
+	mensaje = "El resultado es "+ multiplicar
 
 	alert(mensaje);
 }
@@ -62,7 +62,7 @@ function dividir()
 	numero2 = parseInt(document.getElementById("txtIdNumeroDos").value);
 	dividir = numero1 / numero2
 
-	mensaje = dividir
+	mensaje = "El resultado es "+ dividir
 
 	alert(mensaje);
 }
