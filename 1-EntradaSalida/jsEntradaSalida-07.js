@@ -13,9 +13,9 @@ function sumar()
 
 	numero1 = parseInt(document.getElementById("txtIdNumeroUno").value);
 	numero2 = parseInt(document.getElementById("txtIdNumeroDos").value);
-	suma = numero1 + numero2
+	suma = numero1 + numero2;
 
-	mensaje = "El resultado es "+  suma
+	mensaje = "El resultado es "+  suma;
 
 	alert(mensaje);	
 }
@@ -29,9 +29,9 @@ function restar()
 
 	numero1 = parseInt(document.getElementById("txtIdNumeroUno").value);
 	numero2 = parseInt(document.getElementById("txtIdNumeroDos").value);
-	resta = numero1 - numero2
+	resta = numero1 - numero2;
 
-	mensaje = "El resultado es "+ resta
+	mensaje = "El resultado es "+ resta;
 
 	alert(mensaje);
 }
@@ -45,9 +45,9 @@ function multiplicar()
 
 	numero1 = parseInt(document.getElementById("txtIdNumeroUno").value);
 	numero2 = parseInt(document.getElementById("txtIdNumeroDos").value);
-	multiplicar = numero1 * numero2
+	multiplicar = numero1 * numero2;
 
-	mensaje = "El resultado es "+ multiplicar
+	mensaje = "El resultado es "+ multiplicar;
 
 	alert(mensaje);
 }
@@ -61,9 +61,9 @@ function dividir()
 
 	numero1 = parseInt(document.getElementById("txtIdNumeroUno").value);
 	numero2 = parseInt(document.getElementById("txtIdNumeroDos").value);
-	dividir = numero1 / numero2
+	dividir = numero1 / numero2;
 
-	mensaje = "El resultado es "+ dividir
+	mensaje = "El resultado es "+ dividir;
 
 	alert(mensaje);
 }

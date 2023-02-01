@@ -12,9 +12,9 @@ function sumar()
 
 	numero1 = parseInt(document.getElementById("txtIdNumeroUno").value);
 	numero2 = parseInt(document.getElementById("txtIdNumeroDos").value);
-	suma = numero1 + numero2
+	suma = numero1 + numero2;
 
-	mensaje = "El resultado es "+  suma
+	mensaje = "El resultado es "+  suma;
 
 	alert(mensaje);
 }
