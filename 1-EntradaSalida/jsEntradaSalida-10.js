@@ -9,9 +9,12 @@ function mostrarAumento()
 	/*
 	let sueldo;
 	let resultado;
+	let descuento;
+
+	descuento = -25
 
 	sueldo = parseInt(document.getElementById("txtIdImporte").value);
-	resultado = sueldo - (sueldo * 0.25);
+	resultado = sueldo + (sueldo * descuento);
 	document.getElementById("txtIdResultado").value = resultado;
 	*/
 
