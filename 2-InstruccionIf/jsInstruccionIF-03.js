@@ -2,7 +2,7 @@ function mostrar()
 {
 	let edad
 
-	edad = document.getElementById("txtIdEdad").value;
+	edad = parseInt(document.getElementById("txtIdEdad").value);
 
     if (edad >= 18) 
 	{ alert("Informar"); } 
