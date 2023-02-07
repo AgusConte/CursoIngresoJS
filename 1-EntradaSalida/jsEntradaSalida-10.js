@@ -24,7 +24,7 @@ function mostrarAumento()
 
     importe = parseInt(document.getElementById("txtIdImporte").value);
 
-    cuanto = prompt("¿Cuanto descuento quiere? (sin el simbolo %)");
+    cuanto =parseInt( prompt("¿Cuanto descuento quiere? (sin el simbolo %)"));
 
 
 
