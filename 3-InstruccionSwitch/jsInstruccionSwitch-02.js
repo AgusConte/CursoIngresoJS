@@ -4,6 +4,7 @@ function mostrar()
 	let mesDelAño = document.getElementById("txtIdMes").value;
 
     switch(mesDelAño){
+        case "Marzo" :
         case "Abril" :
         case "Mayo" :
         case "Junio" :
