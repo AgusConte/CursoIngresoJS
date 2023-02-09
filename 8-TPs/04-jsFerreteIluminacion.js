@@ -23,7 +23,6 @@ function CalcularPrecio ()
 
     cantidadLamparas = parseInt(document.getElementById("txtIdCantidad").value)
     marca = document.getElementById("Marca").value
-    impuesto =
 
 
     lampara = 35
