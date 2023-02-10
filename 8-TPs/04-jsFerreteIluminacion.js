@@ -8,13 +8,17 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
+
 function CalcularPrecio () 
 {
+
+    /*
     let cantidadLamparas;
     let marca;
     let lampara;
     let descuento;
     let precio;
+    let porcentaje;
     let impuesto;
     let mensaje;
     let mensajeImpuesto;
@@ -24,49 +28,40 @@ function CalcularPrecio ()
     cantidadLamparas = parseInt(document.getElementById("txtIdCantidad").value)
     marca = document.getElementById("Marca").value
 
-
     lampara = 35
+    precio = cantidadLamparas * lampara
+
+    if (cantidadLamparas >5)
+        {porcentaje = 0.5}
+
+   else if (cantidadLamparas == 5)
+        {if (marca == "ArgentinaLuz")
+        {porcentaje = 0.4}
+        else 
+        {porcentaje = 0.3}
+    }
+        
+    else if (cantidadLamparas == 4)
+        {if (marca == "ArgentinaLuz"  ||  marca == "FelipeLamparas")
+        {porcentaje = 0.25}
+        else
+        {porcentaje = 0.2}
+    }
 
 
+    else if (cantidadLamparas == 3)
+        {if (marca == "ArgentinaLuz")
+        {porcentaje = 0.15}
+        else if (marca == "FelipeLamparas")
+        {porcentaje = 0.1}
+        else
+        {porcentaje = 0.05}
+    }
 
-
-
- 	if(cantidadLamparas >= 6) 
-    { precio = (lampara * cantidadLamparas);
-        descuento = precio - (precio * 0.5);}
-
-    else if(cantidadLamparas == 5 &&  marca == "ArgentinaLuz") 
-    {precio = (lampara * cantidadLamparas);
-        descuento = precio - (precio * 0.4);}
-
-    else if(cantidadLamparas == 5 ) 
-    {precio = (lampara * cantidadLamparas);
-        descuento = precio - (precio * 0.3);}
-
-    else if(cantidadLamparas == 4 &&  marca == "ArgentinaLuz" ||  cantidadLamparas ==4 && marca == "FelipeLamparas" ) 
-    {precio = (lampara * cantidadLamparas);
-        descuento = precio - (precio * 0.25);}
-
-    else if(cantidadLamparas == 4 ) 
-    {precio = (lampara * cantidadLamparas);
-        descuento = precio - (precio * 0.2);}
-
-    else if(cantidadLamparas == 3 &&  marca == "ArgentinaLuz" ) 
-    {precio = (lampara * cantidadLamparas);
-        descuento = precio - (precio * 0.15);}
-
-    else if(cantidadLamparas == 3 &&  marca == "FelipeLamparas" ) 
-    {precio = (lampara * cantidadLamparas);
-        descuento = precio - (precio * 0.10);}
-
-    else if(cantidadLamparas == 3) 
-    {precio = (lampara * cantidadLamparas);
-        descuento = precio - (precio * 0.05);}
-    
     else
     {alert("no tiene descuento")}
 
-    
+    descuento = precio - (precio * porcentaje)
     
     if(descuento >= 120)
     {impuesto = descuento * 0.1;
@@ -79,4 +74,269 @@ function CalcularPrecio ()
     else
     {mensaje = descuento
     document.getElementById("txtIdprecioDescuento").value = mensaje}
+
+
+
+    ---------------------------------------------------------------------------
+    
+
+     
+    let cantidadLamparas;
+    let marca;
+    let lampara;
+    let descuento;
+    let precio;
+    let porcentaje;
+    let impuesto;
+    let mensaje;
+    let mensajeImpuesto;
+
+
+
+    cantidadLamparas = parseInt(document.getElementById("txtIdCantidad").value)
+    marca = document.getElementById("Marca").value
+
+    lampara = 35
+    precio = cantidadLamparas * lampara
+
+
+    if (cantidadLamparas >0){
+        switch(cantidadLamparas){
+            case 5:
+                if (marca == "ArgentinaLuz")
+                {porcentaje = 0.4}
+                else 
+                {porcentaje = 0.3}
+            break;
+
+            case 4:
+                if (marca == "ArgentinaLuz"  ||  marca == "FelipeLamparas")
+                {porcentaje = 0.25}
+                else
+                {porcentaje = 0.2}
+            break;
+
+            case 3:
+                if (marca == "ArgentinaLuz")
+                {porcentaje = 0.15}
+                else if (marca == "FelipeLamparas")
+                {porcentaje = 0.1}
+                else
+                {porcentaje = 0.05}
+            break;
+
+            case 2:
+                porcentaje = 0
+            break;
+
+            case 1:
+                porcentaje = 0
+            break;
+
+            default:
+                porcentaje = 0.5
+            break;
+            
+        }
+        
+        
+
+
+    descuento = precio - (precio * porcentaje)
+    
+    if(descuento >= 120)
+    {impuesto = descuento * 0.1;
+    descuento = descuento + impuesto
+    mensaje = descuento
+    mensajeImpuesto = "Usted pago "+ impuesto +" de IIBB."
+    alert(mensajeImpuesto)
+    document.getElementById("txtIdprecioDescuento").value = mensaje}
+    
+    else
+    {mensaje = descuento
+    document.getElementById("txtIdprecioDescuento").value = mensaje}
+
+    }else {mensaje = "numero no valido";
+    document.getElementById("txtIdprecioDescuento").value = mensaje}
+
+    
+
+
+-------------------------------------------------------------------------------
+
+
+
+
+let cantidadLamparas;
+    let marca;
+    let lampara;
+    let descuento;
+    let precio;
+    let porcentaje;
+    let impuesto;
+    let mensaje;
+    let mensajeImpuesto;
+
+
+
+    cantidadLamparas = parseInt(document.getElementById("txtIdCantidad").value)
+    marca = document.getElementById("Marca").value
+
+    lampara = 35
+    precio = cantidadLamparas * lampara
+
+
+    if (cantidadLamparas > 0) {
+        if (cantidadLamparas >= 6) {
+        porcentaje = 0.5;}
+        
+        else if (cantidadLamparas == 5) {
+          switch (marca) {
+            case "ArgentinaLuz": porcentaje = 0.4;
+              break;
+            default: porcentaje = 0.3;
+          }
+    
+    
+        } else if (cantidadLamparas == 4) {
+          switch (marca) {
+            case "ArgentinaLuz":
+            case "FelipeLamparas":
+            porcentaje = 0.25;
+              break;
+            default:
+            porcentaje = 0.20;
+          }
+    
+        } else if (cantidadLamparas == 3) {
+          switch (marca) {
+            case "ArgentinaLuz":
+            porcentaje = 0.15;
+              break;
+    
+            case "FelipeLamparas":
+            porcentaje = 0.10;
+              break;
+    
+            default:
+            porcentaje = 0.05;
+          }
+        } else {
+        porcentaje = 0;
+        }
+        
+
+
+    descuento = precio - (precio * porcentaje)
+
+    if(descuento >= 120)
+    {impuesto = descuento * 0.1;
+    descuento = descuento + impuesto
+    mensaje = descuento
+    mensajeImpuesto = "Usted pago "+ impuesto +" de IIBB."
+    alert(mensajeImpuesto)
+    document.getElementById("txtIdprecioDescuento").value = mensaje}
+
+    else
+    {mensaje = descuento
+    document.getElementById("txtIdprecioDescuento").value = mensaje}
+
+    }else {mensaje = "numero no valido";
+    document.getElementById("txtIdprecioDescuento").value = mensaje}
+
+
+
+---------------------------------------------------------------------------------*/
+
+
+
+    let cantidadLamparas;
+    let marca;
+    let lampara;
+    let descuento;
+    let precio;
+    let porcentaje;
+    let impuesto;
+    let mensaje;
+    let mensajeImpuesto;
+
+
+
+    cantidadLamparas = parseInt(document.getElementById("txtIdCantidad").value)
+    marca = document.getElementById("Marca").value
+
+    lampara = 35
+    precio = cantidadLamparas * lampara
+
+
+    if (cantidadLamparas >0){
+        switch(cantidadLamparas){
+            case 5:
+                switch (marca){
+                    case "ArgentinaLuz": porcentaje = 0.4
+                    break;
+
+                    default : porcentaje = 0.3
+                    break;
+                }
+                    
+            break;
+
+            case 4:
+                switch (marca){
+                    case "ArgentinaLuz":
+                    case "FelipeLamparas": porcentaje = 0.25
+                    break;
+                    default : porcentaje = 0.2
+                    break;
+                }
+
+            break;
+
+            case 3:
+                switch (marca){
+                    case "ArgentinaLuz": porcentaje = 0.15
+                    break;
+                    case "FelipeLamparas": porcentaje = 0.1
+                    break;
+                    default : porcentaje = 0.05
+                    break;
+                }
+
+            break;
+
+            case 2:
+                porcentaje = 0
+            break;
+
+            case 1:
+                porcentaje = 0
+            break;
+
+            default:
+                porcentaje = 0.5
+            break;
+            
+        }
+        
+        
+
+
+    descuento = precio - (precio * porcentaje)
+
+    if(descuento >= 120)
+    {impuesto = descuento * 0.1;
+    descuento = descuento + impuesto
+    mensaje = descuento
+    mensajeImpuesto = "Usted pago "+ impuesto +" de IIBB."
+    alert(mensajeImpuesto)
+    document.getElementById("txtIdprecioDescuento").value = mensaje}
+
+    else
+    {mensaje = descuento
+    document.getElementById("txtIdprecioDescuento").value = mensaje}
+
+    }else {mensaje = "numero no valido";
+    document.getElementById("txtIdprecioDescuento").value = mensaje}
+
 }
