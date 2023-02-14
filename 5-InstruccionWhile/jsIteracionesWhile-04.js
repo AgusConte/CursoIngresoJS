@@ -5,7 +5,12 @@ function mostrar()
 {
 	let numeroIngresado;
 
+	numeroIngresado = parseInt(prompt("ingrese un número entre 0 y 9 "))
 
-	while()
+	while(isNaN(numeroIngresado) || numeroIngresado < -1 || numeroIngresado > 10){
+		numeroIngresado = parseInt(prompt("ingrese un número entre 0 y 9 "))
+	}
 	
+	document.getElementById("txtIdNumero").value = numeroIngresado
+
 }//FIN DE LA FUNCIÓN
