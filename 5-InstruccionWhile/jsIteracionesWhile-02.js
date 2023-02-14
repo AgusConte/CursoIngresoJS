@@ -7,7 +7,7 @@ function mostrar()
 
 	i = 10
 
-	while(i >= 1){
+	while(i > 0){
 		console.log(i);
 		i = i - 1;
 	}
