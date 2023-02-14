@@ -7,9 +7,10 @@ function mostrar()
 
 	n = 10
 
-	while(n >= 1)
-	{alert(n);
-	n--;}
+	while(n >= 1){
+		alert(n);
+		n--;
+	}
 
 
 }//FIN DE LA FUNCIÓN
