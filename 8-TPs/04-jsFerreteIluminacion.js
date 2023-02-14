@@ -278,10 +278,8 @@ let cantidadLamparas;
 
                     default : porcentaje = 0.3
                     break;
-                }
-                    
-            break;
-
+                }    
+                break;
             case 4:
                 switch (marca){
                     case "ArgentinaLuz":
@@ -324,19 +322,22 @@ let cantidadLamparas;
 
     descuento = precio - (precio * porcentaje)
 
-    if(descuento >= 120)
-    {impuesto = descuento * 0.1;
-    descuento = descuento + impuesto
-    mensaje = descuento
-    mensajeImpuesto = "Usted pago "+ impuesto +" de IIBB."
-    alert(mensajeImpuesto)
-    document.getElementById("txtIdprecioDescuento").value = mensaje}
+    if(descuento >= 120){
+        impuesto = descuento * 0.1;
+        descuento = descuento + impuesto
+        mensaje = descuento
+        mensajeImpuesto = "Usted pago "+ impuesto +" de IIBB."
+        alert(mensajeImpuesto)
+        document.getElementById("txtIdprecioDescuento").value = mensaje
+    }
 
-    else
-    {mensaje = descuento
-    document.getElementById("txtIdprecioDescuento").value = mensaje}
+    else{
+        mensaje = descuento
+        document.getElementById("txtIdprecioDescuento").value = mensaje
+    }
 
-    }else {mensaje = "numero no valido";
-    document.getElementById("txtIdprecioDescuento").value = mensaje}
+    }else {
+        mensaje = "numero no valido";
+        document.getElementById("txtIdprecioDescuento").value = mensaje}
 
 }
