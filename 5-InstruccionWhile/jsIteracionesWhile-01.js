@@ -24,8 +24,9 @@ function mostrar()
 
 	n = 1
 
-	while(n <= 10)
-	{alert(n);
-	n++;}
+	while(n <= 10){
+		alert(n);
+		n++;
+	}
 
 }//FIN DE LA FUNCIÓN
