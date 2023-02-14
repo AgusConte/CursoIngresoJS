@@ -6,7 +6,6 @@ function mostrar()
 	let numeroIngresado;
 
 
-	do{numeroIngresado = prompt("ingrese un número entre 0 y 9");}
-	while(numeroIngresado < 0 && numeroIngresado > 9)
+	while()
 	
 }//FIN DE LA FUNCIÓN
