@@ -4,33 +4,38 @@ mostrar el número máximo y el número mínimo ingresado.*/
 function mostrar()
 {	// declarar variables
 	
-	var numeroIngresado;
-	var numeroMaximo;
-	var numeroMinimo;
-	var respuesta;
+	let banderaDelPrimero;
+	let numeroIngresado;
+	let numeroMaximo;
+	let numeroMinimo;
+	let respuesta;
 	//iniciar variables
 	
+	banderaDelPrimero = true
 	respuesta="si";
 	numeroMaximo = -Infinity;
 	numeroMinimo = Infinity;
 
 	while(respuesta == "si" || respuesta == "SI" || respuesta == "Si" ||respuesta == "sI"){
 		numeroIngresado = parseInt(prompt("ingrese numero"));
+		while(isNaN(numeroIngresado)){
+			numeroIngresado = parseInt(prompt("ERROR : ingresa un numero"));
+		}
 	
-		if( numeroIngresado > numeroMaximo){
+		if(banderaDelPrimero == true){
+			numeroMaximo = numeroIngresado;
+			numeroMinimo = numeroIngresado;
+			banderaDelPrimero = false;
+		}
+
+		else if( numeroIngresado > numeroMaximo){
 			numeroMaximo = numeroIngresado;
 		}
-		else{
-			console.log("no funciona")
-		}
 	
-		if( numeroIngresado < numeroMinimo ){
+		else if( numeroIngresado < numeroMinimo ){
 			numeroMinimo= numeroIngresado;
 		}
-		else{
-			console.log("no funciona")
-		}
-	
+		
 		respuesta = prompt("Desea continuar? (coloque Si)");
 	
 	}
