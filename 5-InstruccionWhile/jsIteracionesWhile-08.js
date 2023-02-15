@@ -8,23 +8,24 @@ function mostrar()
     var sumaPositivos;
     var multiplicacionNegativos;
     let numero;
+
     contador=0;
     sumaPositivos=0;
     multiplicacionNegativos=1;
     respuesta='si';
 
     while(respuesta == "si" || respuesta == "SI" || respuesta == "Si" ||respuesta == "sI"){
-    numero = parseInt(prompt("Ingrese numero"))
-        if(numero < 0){
-
-
-            multiplicacionNegativos = multiplicacionNegativos * numero;
-
-
+        contador = contador + 1
+        numero = parseInt(prompt("Ingrese numero"))
+        while(isNaN(numero)){
+            numeroIngresado = parseInt(prompt("ERROR : ingresa un numero"));
         }
-        else
-        {
+
+        if(numero > 0){
             sumaPositivos = sumaPositivos + numero;
+        }
+        else{
+            multiplicacionNegativos = multiplicacionNegativos * numero;
         }
 
         respuesta = prompt("Desea continuar? (coloque Si)");
