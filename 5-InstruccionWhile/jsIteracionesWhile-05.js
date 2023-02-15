@@ -7,7 +7,7 @@ Al presionar el botón pedir un sexo
     let sexoIngresado;
     sexoIngresado = prompt("ingrese f ó m .");
 
-    while(sexoIngresado != "m" && sexoIngresado != "f"){
+    while(!isNaN(sexoIngresado) && sexoIngresado != "m" && sexoIngresado != "f"){
         alert("Ingrese un sexo válido, m o f")
         sexoIngresado = prompt("ingrese f ó m .")
     }
