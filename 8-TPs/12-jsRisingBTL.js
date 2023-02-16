@@ -9,7 +9,6 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
-	function ComenzarIngreso() {
 		//Definir variables para almacenar los datos ingresados
 		var edadIngresada;
 		var sexoIngresado;
@@ -55,6 +54,6 @@ function ComenzarIngreso ()
 		document.getElementById("txtSueldoBruto").value = sueldoBrutoIngresado;
 		document.getElementById("txtNumLegajo").value = numLegajoIngresado;
 		document.getElementById("txtNacionalidad").value = nacionalidadIngresada;
-	  }
+	  
 
 }

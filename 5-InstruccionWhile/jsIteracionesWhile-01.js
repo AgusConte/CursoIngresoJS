@@ -17,7 +17,7 @@ function mostrar()
 	{n++;
 	alert(n);}
 
---------------------------------------------------------------------*/
+--------------------------------------------------------------------
 
 
 	let i;
@@ -71,5 +71,56 @@ function mostrar()
 	console.log( "sumaPares: " +sumaPares);
 	console.log( "mayorImpares: " +mayorImpares);
 	console.log( "mayorNumero: " +mayorNumero);
+
+------------------------------------------------------------------------*/
+
+let bandera;
+	let numeroIngresado;
+	let nombre;
+	let numeroMaximo;
+	let numeroMinimo;
+	let nombreMaximo;
+	let nombreMinimo;
+	let respuesta;
+	//iniciar variables
+	
+	bandera = true
+	respuesta="si";
+	numeroMaximo = -Infinity;
+	numeroMinimo = Infinity;
+
+	while(respuesta == "si" || respuesta == "SI" || respuesta == "Si" ||respuesta == "sI"){
+		numeroIngresado = parseInt(prompt("ingrese numero"));
+		nombre = prompt("ingrese nombre");
+		while(isNaN(numeroIngresado)  || numeroIngresado < 0 || numeroIngresado > 120){
+			numeroIngresado = parseInt(prompt("ERROR : ingresa un numero"));
+		}
+	
+		if(bandera == true){
+			numeroMaximo = numeroIngresado;
+			numeroMinimo = numeroIngresado;
+			nombreMaximo = nombre;
+			nombreMinimo = nombre;
+			bandera = false;
+		}
+
+		else if( numeroIngresado > numeroMaximo){
+			numeroMaximo = numeroIngresado;
+			nombreMaximo = nombre;
+		}
+	
+		else if( numeroIngresado < numeroMinimo ){
+			numeroMinimo= numeroIngresado;
+			nombreMinimo = nombre;
+		}
+		
+		respuesta = prompt("Desea continuar? (coloque Si)");
+	
+	}
+
+	
+	alert( nombreMaximo + " es el mas viejo porque tiene " +numeroMaximo  );
+	alert(nombreMinimo + " es el mas joven porque tiene " + numeroMinimo);	
+
 
 }//FIN DE LA FUNCIÓN
