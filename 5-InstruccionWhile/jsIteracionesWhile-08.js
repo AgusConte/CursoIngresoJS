@@ -18,7 +18,7 @@ function mostrar()
         contador = contador + 1
         numero = parseInt(prompt("Ingrese numero"))
         while(isNaN(numero)){
-            numeroIngresado = parseInt(prompt("ERROR : ingresa un numero"));
+           numero = parseInt(prompt("ERROR : ingresa un numero"));
         }
 
         if(numero > 0){

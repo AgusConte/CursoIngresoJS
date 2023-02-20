@@ -20,7 +20,7 @@ function mostrar()
     while(respuesta == "si" || respuesta == "SI" || respuesta == "Si" ||respuesta == "sI"){
     numero = parseInt(prompt("Coloca el numero a calcular"));
         while(isNaN(numero)){
-            numeroIngresado = parseInt(prompt("ERROR : ingresa un numero"));
+            numero = parseInt(prompt("ERROR : ingresa un numero"));
         }
     acumulador = acumulador + numero
     contador = contador + 1
