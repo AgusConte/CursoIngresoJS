@@ -16,16 +16,79 @@ function ComenzarIngreso ()
 	let numLegajo;
 	let nacionalidad;
 		
+	edad = parseInt(prompt("ingrese su edad"))
+	while(isNaN(edad) || edad < 18 || edad > 90){
+		edad = parseInt(prompt("ERROR: ingrese una edad entre 18 y 90 años"))
+	}
 	
+	sexo = prompt("ingrese su sexo: “M” para masculino y “F” para femenino")
+	while(sexo != "f"&& sexo != "m"){
+		sexo = (prompt("ERROR: ingrese f o m"))
+	}
 
+	estadoCivil = prompt("ingrese su estado civil: 1-para soltero, 2-para casados, 3-para divorciados y 4-para viudos")
+	while(estadoCivil != "1" && estadoCivil != "2" && estadoCivil != "3" && estadoCivil != "4"){
+		estadoCivil = (prompt("ERROR: ingrese 1-para soltero, 2-para casados, 3-para divorciados y 4-para viudos"))
+	}
+
+	sueldoBruto = parseInt(prompt("ingrese su sueldo bruto"))
+	while(isNaN(sueldoBruto) || sueldoBruto < 8000){
+		sueldoBruto = parseInt(prompt("ERROR: su sueldo bruto tiene que se mayor a 8000"))
+	}
+
+	numLegajo = parseInt(prompt("ingrese su numero de legajo"))
+	while(isNaN(numLegajo) || numLegajo < 1000 || numLegajo > 9999){
+		numLegajo = parseInt(prompt("ERROR: su numero de legajo no puede ser menor a 1000"))
+	}
+
+	nacionalidad = prompt("ingrese su nacionalidad: “a” para argentinos, “e” para extranjeros, “n” para nacionalizados")
+	while(nacionalidad != "a"&& nacionalidad != "e" && nacionalidad != "n"){
+		nacionalidad = (prompt("ERROR: ingrese “a” para argentinos, “e” para extranjeros, “n” para nacionalizados"))
+	}
+
+	if(sexo == "f"){
+		sexo = "femenino";
+	}
+
+	if(sexo == "m"){
+		sexo = "Masculino";
+	}
+
+	if(estadoCivil == "1"){
+		estadoCivil = "Soltero";
+	}
+
+	if(estadoCivil == "2"){
+		estadoCivil = "Casado";
+	}
+
+	if(estadoCivil == "3"){
+		estadoCivil = "Divorciado";
+	}
+
+	if(estadoCivil == "4"){
+		estadoCivil = "Viudos";
+	}
+
+	if(nacionalidad == "a"){
+		nacionalidad = "Argentino";
+	}
+
+	if(nacionalidad == "e"){
+		nacionalidad = "Extranjeros";
+	}
+
+	if(nacionalidad == "n"){
+		nacionalidad = "Nacionalizados";
+	}
 
 		
-	document.getElementById("txtEdad").value = edad;
-	document.getElementById("txtSexo").value = sexo;
-	document.getElementById("txtEstadoCivil").value = estadoCivil;
-	document.getElementById("txtSueldoBruto").value = sueldoBruto;
-	document.getElementById("txtNumLegajo").value = numLegajo;
-	document.getElementById("txtNacionalidad").value = nacionalidad;
+	document.getElementById("txtIdEdad").value = edad;
+	document.getElementById("txtIdSexo").value = sexo;
+	document.getElementById("txtIdEstadoCivil").value = estadoCivil;
+	document.getElementById("txtIdSueldo").value = sueldoBruto;
+	document.getElementById("txtIdLegajo").value = numLegajo;
+	document.getElementById("txtIdNacionalidad").value = nacionalidad;
 	  
 
 }
