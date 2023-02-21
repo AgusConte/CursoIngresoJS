@@ -1,7 +1,7 @@
 function mostrar()
 {
 /*	let entrada;
-	let i;
+	
 	
 	
 	for (;;) {

@@ -9,51 +9,23 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
-		//Definir variables para almacenar los datos ingresados
-		var edadIngresada;
-		var sexoIngresado;
-		var estadoCivilIngresado;
-		var sueldoBrutoIngresado;
-		var numLegajoIngresado;
-		var nacionalidadIngresada;
-	  
-		//Solicitar y validar la edad
-		do {
-		  edadIngresada = parseInt(prompt("Ingrese su edad (entre 18 y 90 años inclusive):"));
-		} while (edadIngresada < 18 || edadIngresada > 90);
-	  
-		//Solicitar y validar el sexo
-		do {
-		  sexoIngresado = prompt("Ingrese su sexo (M para masculino o F para femenino):").toUpperCase();
-		} while (sexoIngresado !== "M" && sexoIngresado !== "F");
-	  
-		//Solicitar y validar el estado civil
-		do {
-		  estadoCivilIngresado = parseInt(prompt("Ingrese su estado civil (1: soltero, 2: casado, 3: divorciado, 4: viudo):"));
-		} while (estadoCivilIngresado < 1 || estadoCivilIngresado > 4);
-	  
-		//Solicitar y validar el sueldo bruto
-		do {
-		  sueldoBrutoIngresado = parseInt(prompt("Ingrese su sueldo bruto (no menor a 8000):"));
-		} while (sueldoBrutoIngresado < 8000);
-	  
-		//Solicitar y validar el número de legajo
-		do {
-		  numLegajoIngresado = parseInt(prompt("Ingrese su número de legajo (numérico de 4 cifras, sin ceros a la izquierda):"));
-		} while (numLegajoIngresado < 1000 || numLegajoIngresado > 9999 || numLegajoIngresado.toString().charAt(0) === "0");
-	  
-		//Solicitar y validar la nacionalidad
-		do {
-		  nacionalidadIngresada = prompt("Ingrese su nacionalidad (A para argentinos, E para extranjeros, N para nacionalizados):").toUpperCase();
-		} while (nacionalidadIngresada !== "A" && nacionalidadIngresada !== "E" && nacionalidadIngresada !== "N");
-	  
-		//Asignar los datos ingresados a cuadros de texto
-		document.getElementById("txtEdad").value = edadIngresada;
-		document.getElementById("txtSexo").value = sexoIngresado;
-		document.getElementById("txtEstadoCivil").value = estadoCivilIngresado;
-		document.getElementById("txtSueldoBruto").value = sueldoBrutoIngresado;
-		document.getElementById("txtNumLegajo").value = numLegajoIngresado;
-		document.getElementById("txtNacionalidad").value = nacionalidadIngresada;
+	let edad;
+	let sexo;
+	let estadoCivil;
+	let sueldoBruto;
+	let numLegajo;
+	let nacionalidad;
+		
+	
+
+
+		
+	document.getElementById("txtEdad").value = edad;
+	document.getElementById("txtSexo").value = sexo;
+	document.getElementById("txtEstadoCivil").value = estadoCivil;
+	document.getElementById("txtSueldoBruto").value = sueldoBruto;
+	document.getElementById("txtNumLegajo").value = numLegajo;
+	document.getElementById("txtNacionalidad").value = nacionalidad;
 	  
 
 }
