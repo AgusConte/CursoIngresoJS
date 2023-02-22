@@ -19,8 +19,6 @@ function mostrar()
 	let banderaUnidades;
 	let promedio;
 	let cantidadJabones;
-	let x;
-	
 
 	banderaAlcohol = true;
 	banderaUnidades = true;
@@ -28,8 +26,11 @@ function mostrar()
 	acumuladorAlcohol = 0;
 	acumuladorBarbijo = 0;
 	acumuladorJabon = 0;
+	contadorAlcohol = 0;
+	contadorBarbijo = 0;
+	contadorJabon = 0;
 
-	for(i = 0; i < 5; i++){
+	for(i = 0; i < 2; i++){
 		tipo = prompt("ingrese si su producto es un barbijo, jabon o alcohol");
 		while(tipo != "barbijo" && tipo != "jabon" && tipo != "alcohol"){
 			tipo = prompt("ERROR: ingrese si su producto es un barbijo, jabon o alcohol")
@@ -80,19 +81,17 @@ function mostrar()
 			contadorJabon = contadorJabon + 1;
 		}
 
-		if(acumuladorAlcohol > acumuladorBarbijo && acumuladorAlcohol > acumuladorJabon){
-			promedio = acumuladorAlcohol / contadorAlcohol
-		}
-		else if(acumuladorBarbijo > acumuladorAlcohol && acumuladorBarbijo > acumuladorJabon){
-			promedio = acumuladorBarbijo / contadorBarbijo
-		}
-		else if(acumuladorJabon > acumuladorAlcohol && acumuladorJabon > acumuladorBarbijo){
-			promedio = acumuladorJabon / contadorJabon
-		}
-
-
-
 	}
+	if(acumuladorAlcohol > acumuladorBarbijo && acumuladorAlcohol > acumuladorJabon){
+		promedio = acumuladorAlcohol / contadorAlcohol
+	}
+	else if(acumuladorBarbijo > acumuladorAlcohol && acumuladorBarbijo > acumuladorJabon){
+		promedio = acumuladorBarbijo / contadorBarbijo
+	}
+	else if(acumuladorJabon > acumuladorAlcohol && acumuladorJabon > acumuladorBarbijo){
+		promedio = acumuladorJabon / contadorJabon
+	}
+
 
 	cantidadJabones = acumuladorJabon
 
