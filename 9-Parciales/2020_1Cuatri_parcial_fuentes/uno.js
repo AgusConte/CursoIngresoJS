@@ -1,7 +1,7 @@
 
 function mostrar()
 {
-	let tipo;
+	/*let tipo;
 	let precio;
 	let cantidad;
 	let marca;
@@ -30,7 +30,7 @@ function mostrar()
 	contadorBarbijo = 0;
 	contadorJabon = 0;
 
-	for(i = 0; i < 2; i++){
+	for(i = 0; i < 5; i++){
 		tipo = prompt("ingrese si su producto es un barbijo, jabon o alcohol");
 		while(tipo != "barbijo" && tipo != "jabon" && tipo != "alcohol"){
 			tipo = prompt("ERROR: ingrese si su producto es un barbijo, jabon o alcohol")
@@ -101,6 +101,54 @@ function mostrar()
 	alert("el a mas barato salio: $"+menorPrecio+", del fabricante: "+menorFabricante+ ", y son "+menorCantidad + " unidades");
 	alert("el promedio del tipo de producto con mas unidades es: "+promedio);
 	alert("la cantidad de jabones totales es: " + cantidadJabones);
+
+	------------------------------------------------------------------------------------*/
+	/*Parcial 1 2020 bis: /"Super chino" Se pide el ingreso de mercadería de un supermercado , 
+	hasta que el usuario quiera,se pide :
+	tipo(limpieza , comestible , otros)solo estos tres tipos
+	nombre del producto
+	importe del producto (no mayor a 1000 pesos)
+	procedencia(importado, nacional, elaborado)
+	Peso (no mayor a 30 kilos)
+
+	informar SOLO SI HAY
+	a) el NOMBRE del mas pesado de los comestibles
+	b) el NOMBRE del mas caro de todos los productos
+	c) el NOMBRE del mas barato de los elaborados
+	d)el tipo de mercadería que mas aparece
+	e)el porcentaje de productos elaborados por sobre el total
+	f) el promedio de pesos por cada tipo ingresado*/
+
+	let tipoIngresado;
+	let nombreDelProducto;
+	let importeDelProducto;
+	let procedencia;
+	let peso;
+	let respuesta;
+
+
+	respuesta = "si";
+
+
+
+	while(respuesta == "si"){
+
+		tipoIngresado = prompt("ingrese tipo de producto");
+		while(tipoIngresado != "limpieza" && tipoIngresado != "comestible" && tipoIngresado != "otros"){
+			tipoIngresado = prompt("ERROR: inrese si su tipo de producto es de : limpieza, comestible u otros")
+		}
+
+		importeDelProducto = parseInt(prompt("ingrese el importe del producto"));
+		while(isNaN(importeDelProducto) || importeDelProducto < 0 || importeDelProducto > 1000){
+			importeDelProducto =  parseInt(prompt("ERROR: el iporte no puede se menor a 0 y mayo a 1000"));
+		}
+
+
+
+
+
+		respuesta = prompt("¿Desea continuar?")
+	}
 
 
 }

@@ -20,7 +20,6 @@ function mostrar()
   let precio;
   let respuesta;
   let descuento;
-  let acumuladorCantidad;
   let acumuladorCantidadCal;
   let acumuladorCantidadArena;
   let acumuladorCantidadCemento;
@@ -76,19 +75,21 @@ function mostrar()
       precioDescuento = precioBruto - (precioBruto * descuento);
     }
 
-    if(tipo == "arena" ){
-      acumuladorPrecioArena = acumuladorPrecioArena + precio;
-      acumuladorCantidadArena = acumuladorCantidadArena + cantidad;
-    }
+    switch(tipo){
+      case "arena":
+        acumuladorPrecioArena = acumuladorPrecioArena + precio;
+        acumuladorCantidadArena = acumuladorCantidadArena + cantidad;
+      break;
 
-    if(tipo == "cal"){
-      acumuladorPrecioCal = acumuladorPrecioCal + precio;
-      acumuladorCantidadCal = acumuladorCantidadCal + cantidad;
-    }
-    
-    if(tipo == "cemento"){
-      acumuladorPrecioCemento = acumuladorPrecioCemento + precio;
-      acumuladorCantidadCemento = acumuladorCantidadCemento + cantidad;
+      case "cal":
+        acumuladorPrecioCal = acumuladorPrecioCal + precio;
+        acumuladorCantidadCal = acumuladorCantidadCal + cantidad;
+      break;
+
+      case "cemento":
+        acumuladorPrecioCemento = acumuladorPrecioCemento + precio;
+        acumuladorCantidadCemento = acumuladorCantidadCemento + cantidad;
+      break;
     }
 
   respuesta = prompt("¿Desea continuar? Ingrese si/no")

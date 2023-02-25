@@ -1,53 +1,50 @@
+/*Recuperatorio de Parcial 2020: Realizar el algoritmo que permita ingresar los datos de una compra de productos de la construccion, hasta que el cliente quiera:
+          Tipo validad("arena";"cal";"cemento")
+          Cantidad de bolsas(0-300),
+          Precio por bolsa (más de cero y menor a 10000 ),
+          al terminar la compra el cliente accede a un descuento segun las bolsas en total
+            Si compro más de 15 bolsas en total tenes 10% de descuento sobre el total a pagar.
+            Si compro más de 45 bolsas en total tenes 30% de descuento sobre el total a pagar.
+                a)
+                El importe total a pagar , bruto sin descuento y...
+                b)
+                el importe total a pagar con descuento(solo si corresponde)
+                d)
+                Informar la bolsa mas cara de Cal y la mas barata de Cemento.
+                e)
+                Cuantas bolsas de arena se compraron en total, y el promedio por compra.*/ 
+
 function mostrar()
 {
-  /*V
-Realizar el algoritmo que permita ingresar los datos de una compra productos de la construccion, hasta que el cliente quiera:
-Tipo validad("arena";"cal";"cemento")
-Cantidad de bolsas,
-Precio por bolsa (más de cero ),
-
-Si compro más de 10 bolsas en total tenes 15% de descuento sobre el total a pagar.
-Si compro más de 30 bolsas en total tenes 25% de descuento sobre el total a pagar.
-a) El importe total a pagar , bruto sin descuento y...
-b) el importe total a pagar con descuento(solo si corresponde)
-d) Informar el tipo con mas cantidad de bolsas.
-f) El tipo mas caro*/
-
-
-function mostrar()
-{
-  
   let tipo;
   let cantidad;
   let precio;
+  let mayorPrecio;
+  let menorPrecio;
   let respuesta;
   let descuento;
-  let acumuladorCantidad;
-  let acumuladorCantidadCal;
+  let banderaCal;
+  let banderaCemento;
   let acumuladorCantidadArena;
-  let acumuladorCantidadCemento;
-  let acumuladorPrecioCal;
-  let acumuladorPrecioArena;
-  let acumuladorPrecioCemento;
+  let contadorArena;
   let precioBruto;
   let precioDescuento;
-  let mensaje;
-  let mensaje1;
+  let promedio;
 
   respuesta = "si";
-  acumuladorCantidadCal = 0;
+  menorPrecio = "0";
+  mayorPrecio = "0";
+  promedio = "0";
   acumuladorCantidadArena = 0;
-  acumuladorCantidadCemento = 0;
-  acumuladorPrecioCal = 0;
-  acumuladorPrecioArena = 0;
-  acumuladorPrecioCemento = 0;
+  banderaCal = true;
+  banderaCemento = true;
   precioBruto = 0;
   precioDescuento = 0;
-  badera = true;
+  contadorArena = 0;
 
 
 
-  while(respuesta == "si"){
+  while(respuesta == "si" || respuesta == "Si"){
     tipo = prompt("ingrese tipo de producto : arena, cal y cemento");
     while(tipo != "arena" && tipo != "cal" && tipo != "cemento"){
       tipo = prompt("ERROR: ingrese tipo de producto : arena, cal y cemento");
@@ -65,12 +62,12 @@ function mostrar()
 
     precioBruto = precioBruto + (cantidad * precio);
 
-    if(cantidad > 44){
-      descuento = 0.30;
+    if(cantidad > 29){
+      descuento = 0.25;
       precioDescuento = precioBruto - (precioBruto * descuento);
     }
-    else if(cantidad > 14){
-      descuento = 0.1;
+    else if(cantidad > 9){
+      descuento = 0.15;
       precioDescuento = precioBruto - (precioBruto * descuento);
     }
     else{
@@ -78,49 +75,37 @@ function mostrar()
       precioDescuento = precioBruto - (precioBruto * descuento);
     }
 
-    if(tipo == "arena" ){
-      acumuladorPrecioArena = acumuladorPrecioArena + precio;
-      acumuladorCantidadArena = acumuladorCantidadArena + cantidad;
-    }
+    switch(tipo){
+      case "arena":
+        acumuladorCantidadArena = acumuladorCantidadArena + cantidad;
+        contadorArena = contadorArena + 1;
+      break;
 
-    if(tipo == "cal"){
-      acumuladorPrecioCal = acumuladorPrecioCal + precio;
-      acumuladorCantidadCal = acumuladorCantidadCal + cantidad;
-    }
-    
-    if(tipo == "cemento"){
-      acumuladorPrecioCemento = acumuladorPrecioCemento + precio;
-      acumuladorCantidadCemento = acumuladorCantidadCemento + cantidad;
+      case "cal":
+        if (banderaCal == true ||  mayorPrecio < precio) {
+					mayorPrecio = precio;
+					banderaCal = false;
+        }
+      break;
+
+      case "cemento":
+        if (banderaCemento == true ||  menorPrecio > precio) {
+					menorPrecio = precio;
+					banderaCal = false;
+        }
+      break;
     }
 
   respuesta = prompt("¿Desea continuar? Ingrese si/no")
   }
-
-  if(acumuladorCantidadArena > acumuladorCantidadCal && acumuladorCantidadArena > acumuladorCantidadCemento){
-		mensaje = "el tipo de producto con mas cantidad es: arena"
-  }
-	else if(acumuladorCantidadCal > acumuladorCantidadArena && acumuladorCantidadCal > acumuladorCantidadCemento){
-      mensaje = "el tipo de producto con mas cantidad es: cal"
-  }
-	else if(acumuladorCantidadCemento > acumuladorCantidadArena && acumuladorCantidadCemento > acumuladorCantidadCal){
-      mensaje = "el tipo de producto con mas cantidad es: cemento"
-	}
+promedio = acumuladorCantidadArena / contadorArena;
   
-  if(acumuladorPrecioArena > acumuladorPrecioCal && acumuladorPrecioArena > acumuladorPrecioCemento){
-		mensaje1 = "el tipo de producto mas caro es: arena"
-  }
-	else if(acumuladorPrecioCal > acumuladorPrecioArena && acumuladorPrecioCal > acumuladorPrecioCemento){
-    mensaje1 = "el tipo de producto mas caro es: cal"
-  }
-	else if(acumuladorPrecioCemento > acumuladorPrecioArena && acumuladorPrecioCemento > acumuladorPrecioCal){
-    mensaje1 = "el tipo de producto mas caro es: cemento"
-	}
   
 alert(precioBruto);
 alert(precioDescuento);
-alert(mensaje);
-alert(mensaje1);
+alert("la bolsa de cal mas cara salio: "+ mayorPrecio+ " y la mas barata de cemento salio: "+ menorPrecio);
+alert("hay "+acumuladorCantidadArena+" bolsas de arena y su promedio es: "+promedio);
 
 }
 
-}
+
