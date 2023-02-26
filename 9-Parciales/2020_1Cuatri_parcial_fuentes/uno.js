@@ -125,10 +125,48 @@ function mostrar()
 	let procedencia;
 	let peso;
 	let respuesta;
+	let banderaComestibles;
+	let mayorPeso;
+	let mayorNombre;
+	let contadorComestibles;
+	let contadorLimpieza;
+	let ContadorOtros;
+	let acumuladorPrecioComestible;
+	let acumuladorPrecioLimpieza;
+	let acumuladorPrecioOtros;
+	let menorPrecio;
+	let menorNombre;
+	let mensaje2;
+	let acumuladorCantidad;
+	let contadorElaborados;
+	let porcentaje;
+	let acumuladorPesoComestible;
+	let acumuladorPesoLimpieza;
+	let acumuladorPesoOtros;
+	let promedioComestible;
+	let promedioLimpieza;
+	let promedioOtros;
+	let banderaElaborados;
+	let banderaMayorProducto;
+	let mayorProducto;
+	let mayorProductoNombre;
 
-
+	menorNombre = "no hay";
+	banderaMayorProducto = true;
+	banderaElaborados = true;
+	banderaComestibles = true;
 	respuesta = "si";
-
+	acumuladorPrecioComestible = 0;
+	acumuladorPrecioLimpieza = 0;
+	acumuladorPrecioOtros = 0;
+	contadorComestibles = 0;
+	contadorLimpieza = 0;
+	ContadorOtros = 0;
+	contadorElaborados = 0;
+	acumuladorCantidad = 0;
+	acumuladorPesoComestible = 0;
+	acumuladorPesoLimpieza = 0;
+	acumuladorPesoOtros = 0;
 
 
 	while(respuesta == "si"){
@@ -143,12 +181,95 @@ function mostrar()
 			importeDelProducto =  parseInt(prompt("ERROR: el iporte no puede se menor a 0 y mayo a 1000"));
 		}
 
+		nombreDelProducto = prompt("ingrese nombre del producto");
+		
+		procedencia =  prompt("ingres procendencia del producto");
+		while(procedencia != "importado" && procedencia != "nacional" && procedencia != "elaborado"){
+			procedencia = prompt("ERROR: inrese si la procedencia de producto es de : (importado, nacional, elaborado")
+		}
 
+		peso = parseInt(prompt("ingrese el peso del producto"));
+		while(isNaN(peso) || peso < 0 || peso > 30){
+			peso =  parseInt(prompt("ERROR: el iporte no puede se menor a 0 y mayo a 30"));
+		}
 
+		if(banderaMayorProducto == true || mayorProducto < importeDelProducto){
+			mayorProducto = importeDelProducto;
+			mayorProductoNombre = nombreDelProducto;
+			banderaMayorProducto = false;
+		}
 
+		switch(tipoIngresado){
+			case "comestible":
+			 acumuladorPrecioComestible =acumuladorPrecioComestible + importeDelProducto;
+			 contadorComestibles = contadorComestibles + 1;
+			 acumuladorPesoComestible = acumuladorPesoComestible + peso;
+			  if (banderaComestibles == true || mayorPeso > peso) {
+				mayorPeso = peso;
+				mayorNombre = nombreDelProducto
+				banderaAlcohol = false;
+			  }
+			
+			break;
+	  
+			case "limpieza":
+			 acumuladorPrecioLimpieza =acumuladorPrecioLimpieza + importeDelProducto;
+			 contadorLimpieza = contadorLimpieza + 1;
+			 acumuladorPesoLimpieza = acumuladorPesoLimpieza +peso;
+			break;
+	  
+			case "otros":
+			 acumuladorPrecioOtros =acumuladorPrecioOtros + importeDelProducto;
+			 ContadorOtros = ContadorOtros + 1;
+			 acumuladorPesoOtros = acumuladorPesoOtros + peso;
+			break;
+		  }
 
+		switch(procedencia){
+			case "elaborado":
+				if (banderaElaborados == true || menorPrecio > importeDelProducto) {
+					menorPrecio = importeDelProducto;
+					menorNombre = nombreDelProducto;
+					banderaAlcohol = false;
+				  }
+				contadorElaborados = contadorElaborados + 1;
+			break;
+		  }
+		
+		
 		respuesta = prompt("¿Desea continuar?")
+
+	}
+	  
+
+	if(contadorComestibles > contadorLimpieza && contadorComestibles > ContadorOtros){
+		mensaje2 = "el tipo de producto que mas aparece es: comestibles"
+	}
+		
+	else if(contadorLimpieza > contadorComestibles && contadorLimpieza > ContadorOtros){
+		mensaje2 = "el tipo de producto que mas aparece es: limpieza"
+	}
+	
+	else if(ContadorOtros > contadorComestibles && ContadorOtros > contadorLimpieza){
+		mensaje2 = "el tipo de producto que mas aparece es: Otros"
+	}
+
+	acumuladorCantidad = contadorComestibles + contadorLimpieza + ContadorOtros
+	porcentaje = contadorElaborados * acumuladorCantidad / 100;
+
+	promedioComestible = acumuladorPesoComestible / contadorComestibles;
+	promedioLimpieza = acumuladorPesoLimpieza / contadorLimpieza;
+	promedioOtros = promedioOtros / ContadorOtros;
+
+
+	alert("El nombre del mas pesado de los comestibles es: "+ mayorNombre);
+	alert("El nombre del producto mas caro es: "+ mayorProductoNombre);
+	alert("El nombre del mas barato de los elaborados es: "+ menorNombre);
+	alert(mensaje2);
+	alert("El porcentaje de productos elaboreados respecto al total de productos es: "+ porcentaje+"%");
+	alert("el promedio de peso de comestibles es: "+ promedioComestible + ", el promedio de peso de limpieza es: "+ promedioLimpieza + " y el promedio de otros es: "+ promedioOtros);
+
 	}
 
 
-}
+
