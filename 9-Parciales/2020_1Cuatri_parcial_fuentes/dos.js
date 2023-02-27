@@ -141,6 +141,7 @@ mostrar que raza de gatos tiene mas animales y el promedio de edad de esta raza/
   let banderaPerro;
   let banderaPajaro;
   let banderaOtro;
+  let mayorEdadGato;
   let mayorNombreGato = "";
   let mayorNombrePerro = "";
   let mayorNombrePajaro = "";
@@ -165,10 +166,15 @@ mostrar que raza de gatos tiene mas animales y el promedio de edad de esta raza/
   acumuladorEdades = 0;
 
 
-  for(i = 0; i < 2; i++){
+  for(i = 0; i < 10; i++){
     tipo = prompt("ingrese el tipo de mascota: gato , perro , pájaro y otros")
     while(tipo != "gato" && tipo != "perro" && tipo != " pajaro" && tipo != "otros"){
       tipo = prompt("ERROR: ingrese el tipo de mascota: gato , perro , pajaro y otros ")
+    }
+
+    nombre = prompt("ingrese su nombre")
+    while(!isNaN(nombre)){
+      nombre = prompt("ERROR: su nombre contiene numeros")
     }
 
     switch(tipo){
@@ -185,9 +191,10 @@ mostrar que raza de gatos tiene mas animales y el promedio de edad de esta raza/
 
         if (banderaGato == true || banderaGato < edad){
           banderaGato = edad;
-          mayorNombreGato = nombre
+          mayorNombreGato = nombre;
           banderaGato = false;
         }
+        else 
 
         switch(raza){
           case "siames":
@@ -266,12 +273,7 @@ mostrar que raza de gatos tiene mas animales y el promedio de edad de esta raza/
         }
       break;
     }
-    
-    nombre = prompt("ingrese su nombre")
-    while(!isNaN(nombre)){
-      nombre = prompt("ERROR: su nombre contiene numeros")
-    }
-    
+  
   }
 
 if(contadorSiames > contadorGenerico && contadorSiames > contadorPeterbal && contadorSiames > contadorTurco){
@@ -286,7 +288,7 @@ else if(contadorPeterbal > contadorGenerico && contadorPeterbal > contadorTurco 
   promedio = acumuladorEdades / contadorPeterbal;
   mensaje = "la raza de gatos con mas animales es: peterbald, y su promedio de edad es: " + promedio;
 }
-else if(contadorGenerico > contadorPeterbal && contadorGenerico > contadorSiames & contadorGenerico > contadorTurco){
+else if(contadorGenerico > contadorPeterbal && contadorGenerico > contadorSiames && contadorGenerico > contadorTurco){
   promedio = acumuladorEdades / contadorGenerico;
   mensaje = "la raza de gatos con mas animales es: generico, y su promedio de edad es: " + promedio;
 }
