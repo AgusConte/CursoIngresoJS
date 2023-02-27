@@ -1,6 +1,6 @@
 function mostrar()
 {
-	let nombre;
+	/*let nombre;
 	let edad;
 	let sexo;
 	let nacionalidad;
@@ -126,5 +126,20 @@ function mostrar()
 	console.log("La cantidad de mujeres solteras o viudas es: " + contadorMujeresSolteroViudo);
 	console.log(contadorAbuelosTemperaturaAlta + " es la cantidad de gente de la tercera edad con temperatura mayor a 38°");
 	console.log("Promedio de edad entre las mujeres casadas es: " + promedioEdad); 
+
+	---------------------------------------------------------------------*/
+	/*Vacaciones en Familia" 
+	Nos ingresan una cantidad indeterminada de estadías de vacaciones, 
+	validando los datos ingresados:
+	nombre del pasajero titular, 
+	destino( “Brasil”, “Caribe” o “Europa”), 
+	temporada(“alta”,”baja”,“media”),
+	cantidad de pasajeros que viajan.
+	Informar:
+	a)El destino más elegido.
+	b)El nombre del pasajero titular que lleva menos pasajeros.
+	c)El promedio de personas, que viajan en temporada alta.
+	d)El total de personas que viajaron a Europa.
+	*/
 }
 

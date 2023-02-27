@@ -1,6 +1,7 @@
 
 function mostrar()
 {
+	/*
 	let tipo;
 	let precio;
 	let cantidad;
@@ -92,4 +93,92 @@ function mostrar()
 	alert("el jabon mas caro salio: $"+mayorPrecio+", del fabricante: "+mayorFabricante+ ", y son "+mayorCantidad + " unidades");
 	alert("el promedio del tipo de producto con mas unidades es: "+promedio);
 	alert("la cantidad de jabones totales es: " + cantidadBarbijos);
+
+	---------------------------------------------------------------------
+
+	Recu 2020 1 bis: "Jugando al Doctor" 
+	De 7 personas que ingresan al hospital se deben tomar y validar los siguientes datos:
+	nombre, altura, peso y sexo.
+	a)Informar la cantidad de personas de sexo femenino. 
+	b)La altura promedio en total de pacientes.
+	c)El nombre del hombre con menos peso(si lo hay).
+	d)De la persona no binaria, el más flaco. */
+
+	let nombre;
+	let altura;
+	let peso;
+	let sexo;
+	let contadorFemenino;
+	let contador;
+	let acumuladorAltura;
+	let promedio;
+	let bandraHombre;
+	let nombreHombre = "";
+	let banderaNB;
+	let nombreNB = "";
+
+	banderaNB = true;
+	bandraHombre = true;
+	acumuladorAltura = 0;
+	contadorFemenino = 0;
+	contador = 0;
+
+
+	for(i = 0; i < 7; i++){
+
+		nombre = prompt("ingrese su nombre")
+
+		altura = parseFloat(prompt("ingrese su altura en cm."))
+		while(isNaN(altura) || altura < 50 || altura > 250){
+			altura = parseFloat(prompt("ERROR: no podes medir menos de medio metro ni mas de 2,5 mt."))
+		}
+
+		peso = parseFloat(prompt("ingrese su peso"))
+		while(isNaN(peso) || peso < 30 || peso > 300){
+			peso = parseFloat(prompt("ERROR: no podes pesar menos de 30 kg. ni mas de 300 kg."))
+		}
+
+		sexo = prompt("ingrese su sexo")
+		while(sexo != "m" && sexo != "f" && sexo != "nb"){
+			sexo = prompt("ERROR: su sexo puede ser m, f o nb")
+		}
+
+		acumuladorAltura = acumuladorAltura + altura;
+		contador = contador + 1;
+
+		switch(sexo){
+			case "f":
+				sexo = "femenino";
+				contadorFemenino = contadorFemenino + 1;
+			break;
+
+			case "m":
+				sexo = "masculino";
+
+				if(bandraHombre || bandraHombre < peso){
+					bandraHombre = peso;
+					nombreHombre = nombre;
+					bandraHombre = false;
+				}
+			break;
+
+			case "nb":
+				sexo = "no binario";
+
+				if(banderaNB || banderaNB < peso){
+					banderaNB = peso;
+					nombreNB = nombre;
+					banderaNB = false;
+				}
+			break;
+			}
+	}
+
+	promedio = acumuladorAltura / contador;
+
+	alert("la cantidad de personas de sexo femenino son: "+contadorFemenino);
+	alert("La altura promedio en total de pacientes es : "+promedio);
+	alert("El nombre del hombre con menos peso es: "+ nombreHombre);
+	alert("el no binario mas flaco es: "+nombreNB)
+
 }

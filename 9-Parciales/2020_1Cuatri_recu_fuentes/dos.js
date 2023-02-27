@@ -15,7 +15,7 @@
                 Cuantas bolsas de arena se compraron en total, y el promedio por compra.*/ 
 
 function mostrar()
-{
+{/*
   let tipo;
   let cantidad;
   let precio;
@@ -98,13 +98,113 @@ function mostrar()
 
   respuesta = prompt("¿Desea continuar? Ingrese si/no")
   }
-promedio = acumuladorCantidadArena / contadorArena;
+  promedio = acumuladorCantidadArena / contadorArena;
+    
+    
+  alert(precioBruto);
+  alert(precioDescuento);
+  alert("la bolsa de cal mas cara salio: "+ mayorPrecio+ " y la mas barata de cemento salio: "+ menorPrecio);
+  alert("hay "+acumuladorCantidadArena+" bolsas de arena y su promedio es: "+promedio);
+
+
+------------------------------------------------------
+  Recu 2020 2 bis: /* "El cine"
+  De un cine se deben ingresar una cantidad indeterminada 
+  de venta de entradas diaria, validando los
+  siguientes datos:
+  nombre de película, precio, cantidad de entradas, tipo(3D o 4D)
+  a)El nombre de la película más cara de tipo 4D.
+  b)Informar el precio total de la venta del día.
+  c)El nombre de la película con menos cantidad de entradas.
+  d)El tipo de pelicula más vista y la cantidad de entradas. 
+  e)El nombre de la pelicula más barata en 3D.*/
+
+  let nombre;
+  let precio;
+  let cantidad;
+  let tipo;
+  let respuesta = "si";
+  let bandera4d;
+  let bandera3d;
+  let nombre4d = "";
+  let nombre3d = "";
+  let acumladorPrecio;
+  let acumulador4d;
+  let acumulador3d;
+  let banderaMenosEnrtradas;
+  let nombreMenosEntradas = "";
+  let menasje;
+
+  banderaMenosEnrtradas = true;
+  acumulador3d = 0;
+  acumulador4d = 0;
+  acumladorPrecio = 0;
+  bandera3d = true;
+  bandera4d = true;
+
+
+  while(respuesta == "si"){
+
+    nombre = prompt("ingrese el nomber de la pelicula")
+
+    precio = parseFloat(prompt("ingrese el precio de la pelicula"))
+    while(isNaN(precio) || precio < 0 || precio > 5000){
+      precio = parseFloat(prompt("ERROR: ingrese bien el precio"))
+    }
+
+    cantidad = parseFloat(prompt("ingrese la cantidad de entradas"))
+    while(isNaN(cantidad) || cantidad < 0){
+      cantidad = parseFloat(prompt("ERROR: ingrese bien la cantidad"))
+    }
+
+    tipo = prompt("ingrese el tipo de entrada")
+    while(tipo != "3d" && tipo != "4d"){
+      tipo = prompt("ERROR: ingrese tipo de entrada")
+    }
+
+    switch(tipo){
+      case "3d":
+        if(bandera3d || bandera3d < precio){
+          bandera3d = precio;
+          nombre3d = nombre;
+          bandera3d = false;
+        }
+        acumulador3d = acumulador3d + cantidad;
+      break;
+
+      case "4d":
+        if(bandera4d || bandera4d > precio){
+          bandera4d = precio;
+          nombre4d = nombre;
+          bandera4d = false;
+        }
+        acumulador4d = acumulador4d + cantidad
+      break;
+    }
+
+    if(banderaMenosEnrtradas || banderaMenosEnrtradas < cantidad){
+      banderaMenosEnrtradas = cantidad;
+      nombreMenosEntradas = nombre;
+      banderaMenosEnrtradas = false;
+    }
+
+    acumladorPrecio = acumladorPrecio + precio
+
+    respuesta = prompt("¿Quiere continuar?")
+  }
   
-  
-alert(precioBruto);
-alert(precioDescuento);
-alert("la bolsa de cal mas cara salio: "+ mayorPrecio+ " y la mas barata de cemento salio: "+ menorPrecio);
-alert("hay "+acumuladorCantidadArena+" bolsas de arena y su promedio es: "+promedio);
+  if(acumulador3d > acumulador4d){
+    menasje = "el tipo de pelicula con mas entradas es: 3d, con: " + acumulador3d +" entradas";
+  }
+  else if(acumulador4d > acumulador3d){
+    menasje = "el tipo de pelicula con mas entradas es: 4d, con: " + acumulador4d +" entradas";
+  }
+
+  alert("El nombre de la película más cara de tipo 4D: "+nombre4d);
+  alert("El nombre de la pelicula más barata en 3D: "+nombre3d);
+  alert("la venta del dia fue de: $"+acumladorPrecio);
+  alert("El nombre de la película con menos cantidad de entradas es: "+nombreMenosEntradas);
+  alert(menasje);
 
 }
 
