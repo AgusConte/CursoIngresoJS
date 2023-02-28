@@ -141,5 +141,92 @@ function mostrar()
 	c)El promedio de personas, que viajan en temporada alta.
 	d)El total de personas que viajaron a Europa.
 	*/
+
+	let nombreTitular;
+	let destino;
+	let cantidad;
+	let temporada;
+	let respuesta = "si";
+	let menasje;
+	let acumuladorBrasil;
+	let acumuladorEuropa;
+	let acumuladorCaribe;
+	let banderaTitular;
+	let nombreBanderaTitular = "";
+	let acumuladorAlta;
+	let promedio;
+
+	acumuladorAlta = 0;
+	banderaTitular = true;
+	acumuladorBrasil = 0;
+	acumuladorCaribe = 0;
+	acumuladorEuropa = 0; 
+  
+	while(respuesta == "si"){
+  
+	  nombreTitular = prompt("ingrese el nomber del titular")
+  
+	  destino =  prompt("ingrese el destino")
+	  while(destino != "brasil" && destino != "caribe" && destino != "europa"){
+		destino = prompt("ERROR: ingrese el destino")
+	  }
+  
+	  cantidad = parseFloat(prompt("ingrese la cantidad de pasajeros"))
+	  while(isNaN(cantidad) || cantidad < 0){
+		cantidad = parseFloat(prompt("ERROR: ingrese bien la cantidad"))
+	  }
+  
+	  temporada = prompt("ingrese la temporada")
+	  while(temporada != "alta" && temporada != "baja" && temporada != "media"){
+		temporada = prompt("ERROR: ingrese temporada")
+	  }
+  
+	 	switch(destino){
+			case "brasil":
+				acumuladorBrasil = acumuladorBrasil + cantidad;
+
+			break;
+  
+			case "caribe":
+				acumuladorCaribe = acumuladorCaribe + cantidad;
+
+			break;
+
+			case "europa":
+				acumuladorEuropa = acumuladorEuropa + cantidad;
+
+			break;
+	 	}
+
+		switch(temporada){
+			case "alta":
+				acumuladorAlta = acumuladorAlta + cantidad;
+		}
+  
+	  	if(banderaTitular || banderaTitular > cantidad){
+		banderaTitular = cantidad;
+		nombreBanderaTitular = nombreTitular;
+		banderaTitular = false;
+	  	}
+
+		respuesta = prompt("¿Quiere continuar?");
+	}
+
+	if(acumuladorBrasil > acumuladorCaribe && acumuladorBrasil > acumuladorEuropa){
+		menasje = "El destino mas elegido es Brasil";
+	}
+	else if(acumuladorCaribe > acumuladorBrasil && acumuladorCaribe > acumuladorEuropa){
+		menasje = "El destino mas elegido es Caribe";
+	}
+	else if(acumuladorEuropa > acumuladorBrasil && acumuladorEuropa > acumuladorCaribe){
+		menasje = "El destino mas elegido es Europa";
+	}
+
+	promedio = cantidad / acumuladorAlta;
+  
+	alert(menasje);
+	alert("El nombre del titular que lleva mas pasajeros es: "+nombreBanderaTitular);
+	alert("El promedio de personas que viajan en temporada alta es: "+promedio);
+	alert("El total de personas que viajaron a Europa es: "+acumuladorEuropa);
 }
 
